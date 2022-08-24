@@ -1,21 +1,28 @@
 ﻿#include <iostream>
 #include <Windows.h>
-
 #include "file_load.h"
 
 int main()
 {
    SetConsoleCP(1251);
    SetConsoleOutputCP(1251);
-
-   // std::cout << "Клас для роботи з файлами\n";
-
+     
+   //Базовий клас. Друкує вміст файлу.
    printFile pf;
    pf.Display("text1.txt");
-    //lf.print();
 
+   //Нащадок. Друкує вміст файлу у вигляді кодування аскі.
+   printFileAscii pfa;
+   pfa.Display("text1.txt");
     
+   //Нащадок. Друкує вміст файлу у вигляді восьмеричного (oct) кодування.
+   printFileOct pfoct;
+   pfoct.Display("text1.txt");
 
-    return 0;
+   //Нащадок. Друкує вміст файлу у вигляді шістнадцяткового (hex) кодування.
+   printFileHex pfhex;
+   pfhex.Display("text1.txt");
+
+   return 0;
 }
 
